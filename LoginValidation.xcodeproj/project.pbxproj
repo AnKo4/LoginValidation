@@ -13,6 +13,7 @@
 		55673DEB230D5A150036DF91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55673DEA230D5A150036DF91 /* Assets.xcassets */; };
 		55673DEE230D5A160036DF91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55673DEC230D5A160036DF91 /* LaunchScreen.storyboard */; };
 		55673DF9230D5A160036DF91 /* LoginValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55673DF8230D5A160036DF91 /* LoginValidationTests.swift */; };
+		55D3C911230D6B0900C74B76 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D3C910230D6B0900C74B76 /* Validator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		55673DF4230D5A160036DF91 /* LoginValidationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginValidationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55673DF8230D5A160036DF91 /* LoginValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationTests.swift; sourceTree = "<group>"; };
 		55673DFA230D5A160036DF91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55D3C910230D6B0900C74B76 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +79,9 @@
 		55673DE2230D5A090036DF91 /* LoginValidation */ = {
 			isa = PBXGroup;
 			children = (
+				55D3C90F230D6AF000C74B76 /* Validator */,
+				55D3C90E230D6ADE00C74B76 /* ViewControllers */,
 				55673DE3230D5A090036DF91 /* AppDelegate.swift */,
-				55673DE5230D5A090036DF91 /* ViewController.swift */,
 				55673DE7230D5A090036DF91 /* Main.storyboard */,
 				55673DEA230D5A150036DF91 /* Assets.xcassets */,
 				55673DEC230D5A160036DF91 /* LaunchScreen.storyboard */,
@@ -94,6 +97,22 @@
 				55673DFA230D5A160036DF91 /* Info.plist */,
 			);
 			path = LoginValidationTests;
+			sourceTree = "<group>";
+		};
+		55D3C90E230D6ADE00C74B76 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				55673DE5230D5A090036DF91 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		55D3C90F230D6AF000C74B76 /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				55D3C910230D6B0900C74B76 /* Validator.swift */,
+			);
+			path = Validator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55673DE6230D5A090036DF91 /* ViewController.swift in Sources */,
+				55D3C911230D6B0900C74B76 /* Validator.swift in Sources */,
 				55673DE4230D5A090036DF91 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
