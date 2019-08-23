@@ -11,24 +11,78 @@ import XCTest
 
 class LoginValidationTests: XCTestCase {
 
+    var validator = Validator()
+    var testString: String = ""
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    // Тест на ввод корректного логина
+    func testValidLogins() {
+        testString = "Andrey"
+        XCTAssertTrue(validator.checkString(testString))
+        
+        testString = "And"
+        XCTAssertTrue(validator.checkString(testString))
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        testString = "A8-."
+        XCTAssertTrue(validator.checkString(testString))
+
+        testString = "Andrey."
+        XCTAssertTrue(validator.checkString(testString))
+
+        testString = "Andr.-ey"
+        XCTAssertTrue(validator.checkString(testString))
+
+        testString = "AndreyAndreyAndreyAndreyAndreyAn"
+        XCTAssertTrue(validator.checkString(testString))
+
+        testString = "Andrey@mail.info"
+        XCTAssertTrue(validator.checkString(testString))
+
+        testString = "Andrey8@t.me"
+        XCTAssertTrue(validator.checkString(testString))
+
+        testString = "A@rf.rf"
+        XCTAssertTrue(validator.checkString(testString))
+
+        testString = "An-drey@google.mars"
+        XCTAssertTrue(validator.checkString(testString))
+    }
+    
+    // Тест на ввод некорректного логина
+    func testInvalidLogins() {
+        testString = "A"
+        XCTAssertFalse(validator.checkString(testString))
+ 
+        testString = "A8"
+        XCTAssertFalse(validator.checkString(testString))
+    
+        testString = "8Andrey"
+        XCTAssertFalse(validator.checkString(testString))
+    
+        testString = "-Andr"
+        XCTAssertFalse(validator.checkString(testString))
+    
+        testString = "AndreyAndreyAndreyAndreyAndreyAnd"
+        XCTAssertFalse(validator.checkString(testString))
+
+        testString = "A.@mail.r"
+        XCTAssertFalse(validator.checkString(testString))
+    
+        testString = "8@mail.r"
+        XCTAssertFalse(validator.checkString(testString))
+    
+        testString = "-A@mail.info"
+        XCTAssertFalse(validator.checkString(testString))
+    
+        testString = "Andrey@.info"
+        XCTAssertFalse(validator.checkString(testString))
     }
 
 }
